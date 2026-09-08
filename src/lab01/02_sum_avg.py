@@ -1,0 +1,10 @@
+a = input("a: ")
+b = input("b: ")
+a = a.replace(",", ".")
+a = float(a)
+b = b.replace(",", ".")
+b = float(b)
+
+s = round(a + b, 2)
+avg = round(s/2, 2)
+print(f"sum={s}; avg={avg}")
