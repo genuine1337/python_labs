@@ -5,6 +5,6 @@ a = float(a)
 b = b.replace(",", ".")
 b = float(b)
 
-s = round(a + b, 2)
-avg = round(s/2, 2)
-print(f"sum={s}; avg={avg}")
+s = a+b
+avg = s/2
+print(f"sum={s:.2f}; avg={avg:.2f}")
