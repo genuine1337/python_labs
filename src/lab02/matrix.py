@@ -37,4 +37,26 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     Если строки в матрице разной длины,
     вернётся ValueError.
     """
-    
+    for row in mat:
+        if len(row) != len(mat[0]):
+            raise ValueError("Рваная матрица")
+        
+    result = []
+    for row in mat:
+        result.append(sum(row))
+    return result
+
+def col_sums(mat: list[list[float | int]]) -> list[float]:
+    """
+    На вход подаётся матрица из m строк.
+    Если во всех строках одинаковое число элементов,
+    для каждого столбца матрицы вернётся сумма его элементов.
+    Если строки в матрице разной длины,
+    вернётся ValueError.
+    """
+
+    for row in mat:
+        if len(row) != len(mat[0]):
+            raise ValueError("Рваная матрица")
+    res = []
+    row_len = len(mat[0])
