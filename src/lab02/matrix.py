@@ -27,7 +27,6 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
             result[j].append(mat[i][j])
     return result
 
-# print(transpose([[1, 2], [3]]))
 
 def row_sums(mat: list[list[float | int]]) -> list[float]:
     """
@@ -45,6 +44,7 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     for row in mat:
         result.append(sum(row))
     return result
+
 
 def col_sums(mat: list[list[float | int]]) -> list[float]:
     """
@@ -66,6 +66,3 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
             col_sum += mat[i][j]
         result.append(col_sum)
     return result
-
-
-print(col_sums([[1, 2, 3], [4, 5, 6, 7]]))
