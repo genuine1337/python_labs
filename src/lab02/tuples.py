@@ -24,7 +24,3 @@ def format_record(rec: student) -> str:
     format_fio = f"{surname} {initials}"
     result = f"{format_fio}, гр. {group}, GPA {gpa:.2f}"
     return result
-    
-    
-    
-print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3)))
