@@ -58,5 +58,14 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     for row in mat:
         if len(row) != len(mat[0]):
             raise ValueError("Рваная матрица")
-    res = []
+    result = []
     row_len = len(mat[0])
+    for j in range(row_len): #по столбцам
+        col_sum = 0
+        for i in range(len(mat)): #по строкам
+            col_sum += mat[i][j]
+        result.append(col_sum)
+    return result
+
+
+print(col_sums([[1, 2, 3], [4, 5, 6, 7]]))
