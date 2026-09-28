@@ -1,3 +1,5 @@
+type student = tuple[str, str, float]
+
 def format_record(rec: student) -> str:
     """
     На вход подаётся кортеж из строки с ФИО(ФИ),
@@ -11,7 +13,7 @@ def format_record(rec: student) -> str:
     fio, group, gpa = rec
     raw_fio = fio.split()
 
-    if len(raw_fio) <= 1 or group == "":
+    if len(raw_fio) <= 1 or group.strip() == "":
         raise ValueError("ФИО менее чем из 2 слов или пустая группа")
     if (not type(gpa) is float) or (not 0.0 <= gpa <= 5.0):
         raise TypeError("Неверное GPA")
@@ -20,9 +22,9 @@ def format_record(rec: student) -> str:
     for i in range(1, len(raw_fio)):
         initials += (f"{raw_fio[i][0].capitalize()}.")
     format_fio = f"{surname} {initials}"
-    result = f"{format_fio}, гр. {group}, GPA {gpa}"
+    result = f"{format_fio}, гр. {group}, GPA {gpa:.2f}"
     return result
     
     
     
-# print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 5.0)))
+print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3)))
