@@ -44,4 +44,3 @@ def flatten(mat: list[list | tuple]) -> list:
     for i in mat:
         new_list.extend(i)
     return new_list
-
