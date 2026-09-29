@@ -170,6 +170,8 @@ def format_record(rec: student) -> str:
     """
     if not type(rec) is tuple:
         raise TypeError("rec не кортеж")
+    if len(rec) != 3:
+        raise ValueError("не 3 элемента в кортеже")
     fio, group, gpa = rec
     raw_fio = fio.split()
 
