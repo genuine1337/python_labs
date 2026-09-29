@@ -168,6 +168,8 @@ def format_record(rec: student) -> str:
     Если группа пустая, вернётся ValueError.
     Если неверный тип GPA, вернётся TypeError
     """
+    if not type(rec) is tuple:
+        raise TypeError("rec не кортеж")
     fio, group, gpa = rec
     raw_fio = fio.split()
 
