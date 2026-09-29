@@ -22,7 +22,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     return (lowest, biggest)
 ```
 
-![](../../images/lab02/arrays_min_max.png)
+![](../../images/lab02/arrays_min_max_1.png)
 
 
 ### unique_sorted
@@ -41,7 +41,7 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     return unique_nums
 ```
 
-![](../../images/lab02/arrays_unique_sorted.png)
+![](../../images/lab02/arrays_unique_sorted_1.png)
 
 
 ### flatten
@@ -62,7 +62,7 @@ def flatten(mat: list[list | tuple]) -> list:
     return new_list
 ```
 
-![](../../images/lab02/arrays_flatten.png)
+![](../../images/lab02/arrays_flatten_1.png)
 
 
 
@@ -99,7 +99,7 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
     return result
 ```
 
-![](../../images/lab02/matrix_transpose.png)
+![](../../images/lab02/matrix_transpose_1.png)
 
 
 ### row_sums
@@ -122,7 +122,7 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     return result
 ```
 
-![](../../images/lab02/matrix_row_sums.png)
+![](../../images/lab02/matrix_row_sums_1.png)
 
 
 ### col_sums
@@ -149,7 +149,7 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     return result
 ```
 
-![](../../images/lab02/matrix_col_sums.png)
+![](../../images/lab02/matrix_col_sums_1.png)
 
 
 
@@ -184,4 +184,4 @@ def format_record(rec: student) -> str:
     return result
 ```
 
-![](../../images/lab02/tuples.png)
+![](../../images/lab02/tuples_1.png)
