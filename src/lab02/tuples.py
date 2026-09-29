@@ -10,6 +10,8 @@ def format_record(rec: student) -> str:
     Если группа пустая, вернётся ValueError.
     Если неверный тип GPA, вернётся TypeError
     """
+    if not type(rec) is tuple:
+        raise TypeError("rec не кортеж")
     fio, group, gpa = rec
     raw_fio = fio.split()
 
@@ -29,3 +31,4 @@ print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+# print(format_record(["  сидорова  анна   сергеевна ", "ABB-01", 3.999]))
