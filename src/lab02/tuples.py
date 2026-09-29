@@ -12,6 +12,8 @@ def format_record(rec: student) -> str:
     """
     if not type(rec) is tuple:
         raise TypeError("rec не кортеж")
+    if len(rec) != 3:
+        raise ValueError("не 3 элемента в кортеже")
     fio, group, gpa = rec
     raw_fio = fio.split()
 
@@ -30,5 +32,5 @@ def format_record(rec: student) -> str:
 print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
-print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999, "г Москва")))
 # print(format_record(["  сидорова  анна   сергеевна ", "ABB-01", 3.999]))
