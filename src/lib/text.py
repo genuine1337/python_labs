@@ -42,7 +42,7 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
     for token in tokens:
         frequency[token] = frequency.get(token, 0) + 1
     
-    return frequency
+    return dict(sorted(frequency.items()))
 
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     """
