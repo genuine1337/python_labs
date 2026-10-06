@@ -31,7 +31,7 @@ def tokenize(text: str) -> list[str]:
     return tokens
 
 
-def count_freq(tokens: list[str]) -> dict(str, int):
+def count_freq(tokens: list[str]) -> dict[str, int]:
     '''
     считает частоту токенов в введённом списке,
     возвращает словарь, где ключом является сам токен, а значением - частоту токенов
