@@ -1,10 +1,6 @@
 import sys
-import os
 
-src_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, src_path)
-
-from lib.text import normalize, tokenize, count_freq, top_n
+from src.lib.text import normalize, tokenize, count_freq, top_n
 
 text = sys.stdin.read()
 if text.strip() == "":
