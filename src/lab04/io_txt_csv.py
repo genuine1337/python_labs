@@ -45,3 +45,8 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
             w.writerow(header)
         for r in rows:
             w.writerow(r)
+
+
+txt = read_text("data/lab04/input.txt")  # должен вернуть строку
+print(txt)
+write_csv([("word","count"),("test",3)], "data/check.csv")  # создаст CSV
