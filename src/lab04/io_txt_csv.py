@@ -7,8 +7,8 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     '''
     Открывает файл на чтение и возвращает содержимое как одну строку.
     Кодировка по умолчанию UTF-8, чтобы выбрать другую, её нужно передать в параметр функции (пример: encoding = "cp1251").
-    Если файл не найден - FileNotFoundError.
-    Если неподходящая кодировка - UnicodeDecodeError.
+    Если файл не найден - FileNotFoundError, пусть "падает".
+    Если неподходящая кодировка - UnicodeDecodeError, пусть "падает".
     '''
     p = Path(path)
     return p.read_text(encoding=encoding)
