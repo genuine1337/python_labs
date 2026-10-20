@@ -7,7 +7,7 @@ def main():
         raw_text = read_text("data/lab04/input.txt", encoding="utf-8")
     except FileNotFoundError:
         print("Файл не найден")
-        return
+        sys.exit(1)
     
     normal = normalize(raw_text)
     tokens = tokenize(normal)
