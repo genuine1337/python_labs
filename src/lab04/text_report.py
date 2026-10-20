@@ -1,10 +1,16 @@
 import sys
+import argparse
 from src.lib.text import normalize, tokenize, count_freq, top_n
 from src.lab04.io_txt_csv import read_text, write_csv
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--in", dest="input_path", default="data/lab04/input.txt")
+    parser.add_argument("--encoding", default="utf-8")
+    args = parser.parse_args()
+
     try:
-        raw_text = read_text("data/lab04/input.txt", encoding="utf-8")
+        raw_text = read_text("data/lab04/input.txt", encoding="cp1251")
     except FileNotFoundError:
         print("Файл не найден")
         sys.exit(1)
