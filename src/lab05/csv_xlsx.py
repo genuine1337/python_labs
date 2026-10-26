@@ -1,0 +1,53 @@
+from pathlib import Path
+import csv
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
+
+
+def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
+    '''
+    Конвертирует CSV в XLSX с помощью openpyxl.
+    Первая строка CSV - заголовок.
+    Лист называется "Sheet1".
+    Ширина колонок - автоширина по длине текста, но не менее 8 символов.
+    '''
+    csv_file = Path(csv_path)
+    xlsx_file = Path(xlsx_path)
+
+    if csv_file.suffix.lower() != ".csv":
+        raise ValueError(f"Входной файл не .csv, а {csv_file.suffix.lower()}")
+    if xlsx_file.suffix.lower() != ".xlsx":
+        raise ValueError(f"Выходной файл не .xlsx, a {xlsx_file.suffix.lower()}")
+
+    if not csv_file.exists():
+        raise FileNotFoundError("Не найден входной CSV")
+
+    with open(csv_file, "r", encoding="utf-8", newline="") as f:
+        reader = csv.reader(f)
+        data = list(reader)
+        if not data:
+            raise ValueError("CSV пуст")
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sheet1"
+    
+    for row in data:
+        ws.append(row)
+
+    amount_cols = len(data[0])
+    
+    for column in range(amount_cols):
+        max_width = max(len(str(row[column])) for row in data)
+        width = max(8, max_width)
+        letter = get_column_letter(column + 1)
+        ws.column_dimensions[letter].width = width
+    
+    wb.save(xlsx_file)
+
+    
+    
+
+    
+
+    
