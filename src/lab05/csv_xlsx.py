@@ -34,15 +34,13 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     
     for row in data:
         ws.append(row)
-
-    amount_cols = len(data[0])
     
-    for column in range(amount_cols):
-        max_width = max(len(str(row[column])) for row in data)
-        width = max(8, max_width)
-        letter = get_column_letter(column + 1)
-        ws.column_dimensions[letter].width = width
+    for col in ws.columns:
+        max_len = max(len(str(cell.value or "")) for cell in col)
+        col_letter = get_column_letter(col[0].column)
+        ws.column_dimensions[col_letter].width = max(8, max_len)
     
+    xlsx_file.parent.mkdir(parents=True, exist_ok=True)
     wb.save(xlsx_file)
 
     
