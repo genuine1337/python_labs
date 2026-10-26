@@ -43,9 +43,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     xlsx_file.parent.mkdir(parents=True, exist_ok=True)
     wb.save(xlsx_file)
 
-    
-    
+if __name__=="__main__":
+    csv_to_xlsx("data/lab05/samples/people.csv", "data/lab05/out/people_from_csv.xlsx")
+    csv_to_xlsx("data/lab05/samples/cities.csv", "data/lab05/out/cities_from_csv.xlsx")
 
-    
-
-    
