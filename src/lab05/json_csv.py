@@ -1,10 +1,6 @@
 from pathlib import Path
 import json
 import csv
-# from src.lib.io_helpers import ensure_parent_dir
-
-
-
 
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
@@ -35,11 +31,18 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 
     csv_file.parent.mkdir(parents=True, exist_ok=True)
 
+    keys_dict = {}
+    for item in data:
+        for k in item.keys():
+            keys_dict[k] = None
+    fieldnames = list(keys_dict.keys())  
+
     with open(csv_file, "w", encoding="utf-8", newline="") as f:
-        fieldnames = list(data[0].keys())
-        writer = csv.DictWriter(f, fieldnames=fieldnames, restval="", extrasaction="ignore")
+        writer = csv.DictWriter(f, fieldnames=fieldnames, restval="")
         writer.writeheader()
         writer.writerows(data)
+
+
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
     '''
@@ -62,7 +65,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         reader = csv.DictReader(f)
         data = list(reader)
         if not reader.fieldnames or not data:
-            raise ValueError("Некорректный или пустой CSV")
+            raise ValueError("CSV-файл пуст или не содержит заголовка")
+        
 
     json_file.parent.mkdir(parents=True, exist_ok=True)
 
