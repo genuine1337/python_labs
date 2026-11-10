@@ -14,7 +14,7 @@ def read_input(path: str) -> str:
     except FileNotFoundError:
         print(f"Входной файл не найден: {path}", file=sys.stderr)
         sys.exit(1)
-    except UnicodeEncodeError:
+    except UnicodeDecodeError:
         print(f"Не удалось прочитать входной файл {path} в UTF-8", file=sys.stderr)
         sys.exit(1)
 
