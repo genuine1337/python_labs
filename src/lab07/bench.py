@@ -52,11 +52,11 @@ def main():
         t = timeit.timeit(lambda: two_sum_fast(ts_data, target), number=1)
         csv_rows.append(("two_sum", n, "two_sum_fast", f"{t:.6f}"))
 
-    header = ("Task", "N", "Impl", "Seconds")
+    header = ("task", "n", "impl", "seconds")
     write_csv(csv_rows, "data/lab07/bench.csv", header=header)
 
     print("Результаты бенчмарка:")
-    print(f"{'Task':<10} | {'N':<8} | {'Impl':<15} | {'Seconds':<10}")
+    print(f"{'task':<10} | {'n':<8} | {'impl':<15} | {'seconds':<10}")
     print("-" * 50)
     for task, n, impl, seconds in csv_rows:
         print(f"{task:<10} | {n:<8} | {impl:<15} | {seconds:<10}")
