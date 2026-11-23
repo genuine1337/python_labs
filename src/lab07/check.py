@@ -60,13 +60,13 @@ if __name__=="__main__":
     for fn in (bubble_sort, insertion_sort, selection_sort):
         amount_sorting = random.randint(50, 100)
         check_sorting(fn, amount_sorting)
-        print(f"Функция {fn.__name__} прошла все {amount_sorting} проверок.")
+        print(f"ОК: функция {fn.__name__} прошла все {amount_sorting} проверок.")
 
     for fn in (linear_search, binary_search):
         amount_search = random.randint(50, 100)
         check_search(fn, amount_search)
-        print(f"Функция {fn.__name__} прошла все {amount_search} проверок.")
+        print(f"ОК: функция {fn.__name__} прошла все {amount_search} проверок.")
 
     amount_two_sum = random.randint(50, 100)
     check_two_sum(amount_two_sum)
-    print(f"Функции two_sum_brute и two_sum_fast прошли все {amount_two_sum} проверок.")
+    print(f"ОК: Функции two_sum_brute и two_sum_fast прошли все {amount_two_sum} проверок.")
